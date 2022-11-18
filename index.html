@@ -63,7 +63,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[33.354080317909656,126.51491268156276],[33.37029603246898,126.54991736471865]]);
+        }).fitBounds([[33.08529413766754,126.06398382702191],[33.60347997616078,127.18446581034955]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -83,19 +83,19 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane__0');
-        map.getPane('pane__0').style.zIndex = 400;
-        var layer__0 = L.tileLayer('http://xdworld.vworld.kr:8080/2d/Satellite/201710/{z}/{x}/{y}.jpeg', {
-            pane: 'pane__0',
+        map.createPane('pane_OpenStreetMap_0');
+        map.getPane('pane_OpenStreetMap_0').style.zIndex = 400;
+        var layer_OpenStreetMap_0 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OpenStreetMap_0',
             opacity: 1.0,
             attribution: '',
             minZoom: 1,
             maxZoom: 28,
-            minNativeZoom: 6,
-            maxNativeZoom: 18
+            minNativeZoom: 0,
+            maxNativeZoom: 19
         });
-        layer__0;
-        map.addLayer(layer__0);
+        layer_OpenStreetMap_0;
+        map.addLayer(layer_OpenStreetMap_0);
         function pop__1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -1089,7 +1089,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/_point_12.png" /> 백록담_point': layer__point_12,'<img src="legend/___11.png" /> 선작지왓_윗세오름_경로': layer____11,'<img src="legend/_10.png" /> 보이는대상-기우단': layer__10,'<img src="legend/_360_9.png" /> 방선문_360사진': layer__360_9,'<img src="legend/__epsg5181_8.png" /> 방선문_경로포인터_epsg5181': layer___epsg5181_8,'<img src="legend/_1017_epsg5181_7.png" /> 산방산_경로포인터1017_epsg5181': layer__1017_epsg5181_7,'<img src="legend/_6.png" /> 보는 지점': layer__6,'<img src="legend/_5.png" /> 보이는 대상': layer__5,'탐방로_All<br /><table><tr><td style="text-align: center;"><img src="legend/_All_4_기존0.png" /></td><td>기존</td></tr><tr><td style="text-align: center;"><img src="legend/_All_4_구1.png" /></td><td>구</td></tr></table>': layer__All_4,'<img src="legend/_poly_3.png" /> 백록담_poly': layer__poly_3,'<img src="legend/_All_2.png" /> 문화재구역_All': layer__All_2,'<img src="legend/_1.png" /> 한라산천연보호구역': layer__1,"브이월드 위성영상": layer__0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/_point_12.png" /> 백록담_point': layer__point_12,'<img src="legend/___11.png" /> 선작지왓_윗세오름_경로': layer____11,'<img src="legend/_10.png" /> 보이는대상-기우단': layer__10,'<img src="legend/_360_9.png" /> 방선문_360사진': layer__360_9,'<img src="legend/__epsg5181_8.png" /> 방선문_경로포인터_epsg5181': layer___epsg5181_8,'<img src="legend/_1017_epsg5181_7.png" /> 산방산_경로포인터1017_epsg5181': layer__1017_epsg5181_7,'<img src="legend/_6.png" /> 보는 지점': layer__6,'<img src="legend/_5.png" /> 보이는 대상': layer__5,'탐방로_All<br /><table><tr><td style="text-align: center;"><img src="legend/_All_4_기존0.png" /></td><td>기존</td></tr><tr><td style="text-align: center;"><img src="legend/_All_4_구1.png" /></td><td>구</td></tr></table>': layer__All_4,'<img src="legend/_poly_3.png" /> 백록담_poly': layer__poly_3,'<img src="legend/_All_2.png" /> 문화재구역_All': layer__All_2,'<img src="legend/_1.png" /> 한라산천연보호구역': layer__1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         var i = 0;
         layer__1.eachLayer(function(layer) {
